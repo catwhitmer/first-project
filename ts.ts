@@ -89,3 +89,22 @@ function generateError(message: string, code: number): never {
 }
 
 generateError('An error occured!', 500);
+
+//decorator
+function Logger(constructor: Function) {
+  console.log("Logging...");
+  console.log(constructor);
+}
+
+@Logger
+class Person {
+  name = "Cat";
+
+  constructor() {
+    console.log("Creating person object...");
+  }
+}
+
+const pers = new Person();
+
+console.log(pers);
