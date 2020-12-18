@@ -120,3 +120,32 @@ function printResults(num: number) {
 }
 
 printResults(addNumber(5, 12));
+
+
+//Inteface w extend
+interface Named {
+  readonly name: string;
+}
+
+interface Greetable extends Named {
+  greet(phrase: string): void;
+}
+
+let user1: Greetable;
+
+class Person1 implements Greetable {
+  name: string;
+
+  constructor(n: string) {
+    this.name = n;
+  }
+
+  greet(phrase: string) {
+    console.log(phrase + " " + this.name);
+  }
+}
+
+user1 = new Person1("Cat");
+
+user1.greet("Hi there - I am");
+console.log(user1);
