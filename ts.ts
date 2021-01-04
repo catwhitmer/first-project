@@ -122,7 +122,7 @@ function printResults(num: number) {
 printResults(addNumber(5, 12));
 
 
-//Inteface w extend
+//Interface w extend
 interface Named {
   readonly name: string;
 }
@@ -149,3 +149,16 @@ user1 = new Person1("Cat");
 
 user1.greet("Hi there - I am");
 console.log(user1);
+
+
+//Tuple
+
+const person = {
+    name: 'Cat',
+    age: 40,
+    hobbies: ['Reading', 'Cooking'],
+    role: [2, 'author']
+};
+
+person.role.push('admin'); //allowed
+person.role[1] = 10;  //throws an error
